@@ -1,7 +1,8 @@
 import { z } from 'zod';
 
 export const schema = z.object({
-  tags: z
-    .array(z.string().min(1, 'Tag cannot be empty'))
-    .min(1, 'Must have at least one tag'),
+  // Validação das tags deve:
+  // - Ser um array de strings
+  // - Ter no mínimo 1 tag
+  // - Ter no máximo 3 tags
 });
