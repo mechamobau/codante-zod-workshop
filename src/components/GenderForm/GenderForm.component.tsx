@@ -20,7 +20,10 @@ export default function GenderForm() {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col gap-4 max-w-md mx-auto p-4 border rounded-lg"
     >
-      <select {...register('gender')} className="border p-2 rounded">
+      <select
+        {...register('gender')}
+        className="border p-2 rounded dark:bg-slate-800"
+      >
         <option value="">Select Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
