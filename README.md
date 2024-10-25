@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# Workshop Zod
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é para o worshop da Codante sobre Zod, você também pode acompanhar o projeto seguindo o [Guia](https://guias.codante.io/zod/).
 
-Currently, two official plugins are available:
+## Instalação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para instalar e rodar este projeto localmente, siga os passos abaixo:
 
-## Expanding the ESLint configuration
+1. **Clone o repositório:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   git clone https://github.com/mechamobau/codante-zod-workshop.git
+   cd codante-zod-workshop
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Instale as dependências:**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   ```bash
+   npm install
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. **Inicie o servidor de desenvolvimento:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   npm run dev
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+4. **Abra o navegador e acesse:**
+   ```
+   http://localhost:5173
+   ```
+
+## Estrutura do Projeto
+
+- `src/App.tsx`: Arquivo principal da aplicação que define as rotas e navegação.
+- `src/components/`: Contém todos os componentes de formulários e outros componentes reutilizáveis.
+- `src/templates/`: Contém templates para geração de novos componentes e schemas.
+
+## Uso
+
+Navegue pelos diferentes formulários através do menu de navegação na parte superior da aplicação. Cada formulário possui validações específicas para os dados inseridos.
+
+## Gerar Novos Componentes
+
+Este projeto utiliza o Plop para gerar novos componentes. Para criar um novo componente, execute o comando abaixo e siga as instruções:
+
+```bash
+npm run generate
 ```
