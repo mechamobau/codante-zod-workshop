@@ -10,6 +10,7 @@ import URLForm from './components/URLForm/URLForm.component';
 import PhoneForm from './components/PhoneForm/PhoneForm.component';
 import AddressForm from './components/AddressForm/AddressForm.component';
 import TagsForm from './components/TagsForm/TagsForm.component';
+import Home from './components/Home/Home.component';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         </ul>
       </nav>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/basic" element={<BasicForm />} />
         <Route path="/email" element={<EmailForm />} />
         <Route path="/password" element={<PasswordForm />} />
