@@ -1,2 +1,2 @@
-export { schema } from './schema';
-export { TagsForm } from './TagsForm';
+export { schema } from './TagsForm.schema';
+export { default as TagsForm } from './TagsForm.component';

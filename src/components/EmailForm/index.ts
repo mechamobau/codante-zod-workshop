@@ -1,4 +1,2 @@
-import { EmailForm } from './EmailForm.component';
-import { schema } from './EmailForm.schema';
-
-export { EmailForm, schema };
+export { default as EmailForm } from './EmailForm.component';
+export { schema } from './EmailForm.schema';

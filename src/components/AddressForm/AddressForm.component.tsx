@@ -1,18 +1,8 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import axios from 'axios';
-
-const schema = z.object({
-  address: z.object({
-    cep: z.string().regex(/^\d{5}-?\d{3}$/, 'Must be a valid CEP format'),
-    street: z.string().min(1, 'Street is required'),
-    neighborhood: z.string().min(1, 'Neighborhood is required'),
-    city: z.string().min(1, 'City is required'),
-    state: z.string().min(2, 'State is required'),
-  }),
-});
+import { schema } from './AddressForm.schema';
 
 export default function AddressForm() {
   const {
@@ -24,7 +14,7 @@ export default function AddressForm() {
     resolver: zodResolver(schema),
   });
 
-  const fetchAddress = async (cep) => {
+  const fetchAddress = async (cep: string) => {
     try {
       const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
       const { logradouro, bairro, localidade, uf } = response.data;
@@ -37,14 +27,15 @@ export default function AddressForm() {
     }
   };
 
-  const onCepChange = (e) => {
+  const onCepChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const cep = e.target.value;
     if (/^\d{5}-?\d{3}$/.test(cep)) {
       fetchAddress(cep);
     }
   };
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data: z.infer<typeof schema>) =>
+    alert(JSON.stringify(data));
 
   return (
     <form

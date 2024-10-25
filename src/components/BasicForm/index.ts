@@ -1,4 +1,2 @@
-import { BasicForm } from './BasicForm.component';
-import { schema } from './BasicForm.schema';
-
-export { BasicForm, schema };
+export { default as BasicForm } from './BasicForm.component';
+export { schema } from './BasicForm.schema';

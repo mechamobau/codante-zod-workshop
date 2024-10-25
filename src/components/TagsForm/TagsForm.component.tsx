@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { schema } from './TagsForm.schema';
@@ -13,7 +12,8 @@ export default function TagsForm() {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data: z.infer<typeof schema>) =>
+    alert(JSON.stringify(data));
 
   return (
     <form

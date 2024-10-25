@@ -1,2 +1,2 @@
-export { schema } from './schema';
-export { AddressForm } from './AddressForm';
+export { schema } from './AddressForm.schema';
+export { default as AddressForm } from './AddressForm.component';

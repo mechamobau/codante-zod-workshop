@@ -1,2 +1,2 @@
-export { schema } from './schema';
-export { AgeForm } from './AgeForm';
+export { schema } from './AgeForm.schema';
+export { default as AgeForm } from './AgeForm.component';

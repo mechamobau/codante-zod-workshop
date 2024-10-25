@@ -1,2 +1,2 @@
-export { schema } from './schema';
-export { URLForm } from './URLForm';
+export { schema } from './URLForm.schema';
+export { default as URLForm } from './URLForm.component';
